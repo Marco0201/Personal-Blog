@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Blog/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+{% if category_posts %}
+
+    <h1>{{ cat }}</h1>
+
+        <ul class="home_detail">
+            {% for post in category_posts %}
+            
+
+                <div class="cards">
+                    {% if post.header_image %}
+                        <a href="{% url 'article-detail' post.pk %}"><img src="{{ post.header_image.url }}" alt="no image"></a>
+                        <span class="text">{{ post.title }}</span>
+                        <span class="text">{{ post.snippet }}</span>
+                    {% else %}
+
+                        <a href="{% url 'article-detail' post.pk %}" class="text"> {{ post.title }}</a>
+                        <span class="text">{{ post.snippet }}</span>
+
+                    {% endif %}
+
+                    {% if user.is_authenticated %}
+                        {% if user.id == post.author.id%}
+                            <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+                            <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+                            <br>
+                        {% endif %}
+                    {% else %}
+                    <br>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+{% else %}
+<h2>Sorry there aren't any posts for this category yet.</h2>
+{% endif %}
+</ul>
+    
+</body>
+</html>
+
+{% endblock %}

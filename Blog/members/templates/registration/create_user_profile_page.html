@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Create A New Profile Page {% endblock %}
+
+{% block content %}
+
+<!-- this if else statement makes sure a non-user cannot access the add post page from a post without authenticating (logging in) -->
+{% if user.is_authenticated %}
+    <h1>Create Profile Page...</h1>
+    <br>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <button class="btn btn-primary">Create Profile Page</button>
+        </form>
+    </div>
+    
+{% else %}
+    <h1>You are not allowed here.</h1>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %} {{ post.title_tag }} {% endblock %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'Blog/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <h5> By:  {{ post.author.first_name }}
+        {{ post.author.last_name }} - {{ post.post_date }}  
+        
+     <!-- this if statement asks if the user is authenticated, and if they are then it will display the (Edit) and (Delete) links; if they aren't then the links won't appear. The <br> is added to the else statement for styling purposes only. -->
+    {% if user.is_authenticated %}
+        {% if user.id == post.author.id%}
+         - <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+            <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+            <br>
+        {% endif %}
+    {% else %}
+        <br>
+    {% endif %}
+
+</h5>
+<br>
+<!-- by default django does not let you put html markup in the forms because people can inject malicious code using html. Since django is a backend and it uses a database this becames a dangerous combination. the ( |safe) allows you to use html markup on the body form. -->
+<!-- {% if post.header_image %} -->
+    <!-- <img src="{{ post.header_image.url }}" alt=""> -->
+<!-- {% else %} -->
+<!-- {% endif %} -->
+{{ post.body|safe }}
+
+<br>
+<br>
+
+
+   <!-- Add icon library -->
+   
+<div class="card">
+{% if post.author.profile.profile_pic %}
+    <img src="{{ post.author.profile.profile_pic.url }}" alt="Marco">
+
+{% else %}
+    <img src="{% static 'Blog\images\user.png' %}" alt="User">
+{% endif %}
+  <div class="information">
+
+    <h1 class="name">
+
+        {{ post.author.first_name }}
+        {{ post.author.last_name }}
+
+      </h1>
+
+      <p class="bio">{{ post.author.profile.bio }}</p>
+
+      <div class="social">
+        {% if post.author.profile.website_url %}
+            <a href="{{ post.author.profile.website_url }}"><i class="fa fa-dribbble"></i></a>
+        {% endif %}
+
+        {% if post.author.profile.twitter_url %}
+            <a href="{{ post.author.profile.twitter_url }}"><i class="fa fa-twitter"></i></a>
+        {% endif %}
+
+        {% if post.author.profile.linkedin_url %}
+            <a href="{{ post.author.profile.linkedin_url }}"><i class="fa fa-linkedin"></i></a>
+        {% endif %}
+
+        {% if post.author.profile.github_url %}
+            <a href="{{ post.author.profile.github_url }}"><i class="fa fa-github"></i></a>
+        {% endif %}
+
+        <a href="{% url 'show_profile_page' post.author.profile.id %}"><i class="fa fa-user"></i></a>
+      </div>
+  </div>
+</div> 
+
+<br>
+<br>
+<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+
+
+</body>
+</html>
+
+
+{% endblock %}

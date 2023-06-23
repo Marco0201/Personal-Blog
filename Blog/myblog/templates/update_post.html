@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Edit Blog Post {% endblock %}
+
+{% block content %}
+
+<!-- this if else statement makes sure a non-user cannot access the edit page from a post without authenticating (logging in) -->
+{% if user.is_authenticated %}
+<!-- the if statement below checks if the authenticated user is the same user that made the post originally. If it is, the user will be allowed to make changes to the blog post. This uses the author model in the Post class. you can find it in the models.py file -->
+    {% if user.id == post.author.id%} 
+        <h1>Update Post....</h1>
+        <br>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.media}}
+                {{ form.as_p}}
+                <button class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    {% else %}
+        <h1>You are not allowed here.</h1>
+    {% endif %}
+{% else %}
+    <h1>You are not allowed here.</h1>
+{% endif %}
+
+{% endblock %}

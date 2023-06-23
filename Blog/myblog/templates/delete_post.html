@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Delete Blog Post {% endblock %}
+{% block content %}
+
+<!-- this if else statement makes sure a non-user cannot access the delete post page from a post without authenticating (logging in) -->
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id%}
+        <h1>Delete Post....</h1>
+        <br>
+        <h3>Delete:  {{ post.title }}</h3>
+
+        <br>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                <strong>Are you sure?</strong> <br>
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    {% else %}
+        <h1>You are not allowed here.</h1>
+    {% endif %}
+    
+{% else %}
+    <h1>You are not allowed here.</h1>
+{% endif %}
+{% endblock %}
