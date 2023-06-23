@@ -3,7 +3,7 @@
 # About
 A repository that hosts my personal blog.
 # Techs used
-Html, CSS, Bootstrap, Python, Django, Postgres
+Html, CSS, Bootstrap, Javascript, Python, Django, Postgres
 # Optimizations
 I consistently refactor and optimize my code, sometimes for efficiency, sometimes for readability, but almost always for design purposes.
 # Lessons Learned
