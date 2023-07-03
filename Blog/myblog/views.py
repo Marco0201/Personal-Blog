@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post, Category
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -16,6 +17,7 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     ordering = ['-post_date']
+    paginate_by = 8
     # ordering = ['-id']
 
     # for more information go to https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-single-object/#django.views.generic.detail.SingleObjectMixin.get_context_data
@@ -32,9 +34,12 @@ def CategoryListView(request):
 
 
 def CategoryView(request, cat):
-    # the .replace('-', ' ') is meant to take care of the slugified category url from home.html
     category_posts = Post.objects.filter(category=cat.replace('-', ' '))
-    return render(request, 'categories.html', {'cat': cat.title().replace('-', ' '), 'category_posts': category_posts})
+    paginator = Paginator(category_posts.order_by('-post_date'), 4)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'categories.html', {'cat': cat.title().replace('-', ' '), 'category_posts': category_posts, 'page_obj': page_obj})
 
 
 class ArticleDetailView(DetailView):
@@ -87,7 +92,6 @@ class UpdatePostView(UpdateView):
     #     context = super(UpdatePostView, self).get_context_data(*args, **kwargs)
     #     context["cat_menu"] = cat_menu
     #     return context
-
 
 
 class DeletePostView(DeleteView):
