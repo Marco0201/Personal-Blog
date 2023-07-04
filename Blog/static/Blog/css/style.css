@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     /* flex-direction: column; */
+    justify-content: center;
+    padding-left: 0;
 }
 
 .cards {
@@ -23,4 +25,41 @@
 .text {
     text-align: center;
     margin: 5px;
+}
+
+/* @media screen and (max-width: 768px) and (min-width: 576px) {
+    
+    
+} */
+
+@media screen and (max-width: 575px) {
+    .home_detail {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+    
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px black solid;
+        margin-left: 2rem;
+        width: 15rem;
+        box-sizing: border-box;
+    }
+    
+    .cards img{
+        width: 100%;
+        height: 10rem;
+    }
+    
+    .text {
+        text-align: center;
+        margin: 5px;
+    }
+    
 }
