@@ -1,0 +1,399 @@
+
+@media screen and (min-width: 619px) {
+
+    .everything {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+
+    .section1 {
+        max-width: 45.8125rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        max-height: 20rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .section1 img {
+        border-radius: 50px;
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .section1 header {
+        font-size: 4rem;
+        font-weight: 600;
+        text-align: center;
+        color: #484746;
+    }
+
+    .line-break {
+        border: 3px solid #c7c7c7;
+        max-width: 45.8125rem;
+        margin: auto;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin: auto;
+        max-width: 45.8125rem;
+        max-height: 20rem;
+    }
+
+    .first-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .first-line-break2{
+        display: none;
+    }
+
+    .first-section h1 {
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 0.8rem 0;
+        text-align: center;
+        color: #484746;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .icons a {
+        margin: 0 1rem;
+    }
+    
+    .fab,
+    .fas {
+        font-size: 1.5rem;
+        color: #484746;
+    }
+
+    .line-break2 {
+        border: 1px solid #c7c7c7;
+        max-width: 45.8125rem;
+    }
+
+    .section2 p {
+        font-size: 1.2rem;
+        color: #484746;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .section3, 
+    .section4 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 45.8125rem;
+        max-height: 60rem;
+    }
+
+    .section3 h3, 
+    .section4 h3, 
+    .section5 h3 {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+        color: #484746;
+        font-weight: 900;
+
+    }
+
+    .entry {
+        color: #484746;
+    }
+
+    .Company {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 1.3rem 0 0.2rem 0;
+    }
+
+    .Title {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    .description, 
+    .bullet-points {
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .section5, 
+    .section6 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 45.8125rem;
+        max-height: 60rem;
+    }
+
+    .section5 .bullet-points {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        width: 95%;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .section5 .bullet-points li {
+        list-style: square;
+        margin-left: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .section6 h3 {
+        font-size: 1.7rem;
+        margin: 1rem 0;
+        color: #484746;
+        font-weight: 900;
+    }
+
+    .section6 .bullet-points {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        width: 95%;
+        margin: auto;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .section6 .bullet-points li {
+        list-style: circle;
+        margin-left: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .credit {
+        max-width: 45.8125rem;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+
+    .credit h6 {
+        color: #484746;
+        margin: 1rem 0 0 0;
+    }
+
+    .credit a {
+        color: #484746;
+        text-decoration: none;
+    }
+
+
+}
+
+@media screen and (max-width: 618px) {
+
+    .everything {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+    .section1 {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 12rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .section1 img {
+        border-radius: 50px;
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .section1 header {
+        font-size: 4rem;
+        font-weight: 600;
+        text-align: center;
+        color: #484746;
+    }
+
+    .line-break {
+        border: 3px solid #c7c7c7;
+        width: 90%;
+        margin: auto;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+        max-height: 80rem;
+    }
+
+    .first-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-line-break2 {
+        border: 1px solid #c7c7c7;
+        width: 100%;
+    }
+
+    .first-section h1 {
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 0.8rem 0;
+        text-align: center;
+        color: #484746;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .icons a {
+        margin: 0 1rem;
+    }
+    
+    .fab,
+    .fas {
+        font-size: 1.5rem;
+        color: #484746;
+    }
+
+    .line-break2 {
+        border: 1px solid #c7c7c7;
+        width: 100%;
+        /* margin: auto; */
+    }
+
+    .section2 p {
+        font-size: 1.2rem;
+        color: #484746;
+        line-height: 1.5rem;
+    }
+
+    .section3, 
+    .section4 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+        max-height: 100rem;
+    }
+
+    .section3 h3, 
+    .section4 h3, 
+    .section5 h3 {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+        color: #484746;
+        font-weight: 900;
+
+    }
+
+    .entry {
+        color: #484746;
+    }
+
+    .Company {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 1.3rem 0 0.2rem 0;
+    }
+
+    .Title {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    .description, 
+    .bullet-points {
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .section5, 
+    .section6 {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+        max-height: 200rem;
+    }
+
+    .section5 .bullet-points {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        width: 95%;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .section5 .bullet-points li, 
+    .section6 .bullet-points li {
+        list-style: square;
+        margin-left: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .section6 h3 {
+        font-size: 1.7rem;
+        margin: 1rem 0;
+        color: #484746;
+        font-weight: 900;
+    }
+
+    .section6 .bullet-points {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        width: 95%;
+        margin: auto;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .section6 .bullet-points li {
+        list-style: circle;
+    }
+
+    .credit {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+
+    .credit h6 {
+        color: #484746;
+        margin: 1rem 0 0 0;
+    }
+
+    .credit a {
+        color: #484746;
+        text-decoration: none;
+    }
+
+}

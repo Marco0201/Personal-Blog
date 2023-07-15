@@ -12,53 +12,405 @@
 
     {% load static %}
 
-    <link rel="stylesheet" href="{% static 'Blog/css/main.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'Blog/css/resume.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <h1>User Profile...</h1>
-   <br>
-   <!-- Add icon library -->
-   
-    <div class="card">
-    {% if page_user.profile_pic %}
-        <img src="{{ page_user.profile_pic.url }}" alt="Marco">
 
-    {% else %}
+<div class="everything">
+
+    <section class="section1">
+
+        {% if page_user.profile_pic %}
+        <img src="{{ page_user.profile_pic.url }}" alt="me">
+        {% else %}
         <img src="{% static 'Blog\images\user.png' %}" alt="User">
-    {% endif %}
-    <div class="information">
+        {% endif %}
 
-        <h1 class="name">
+        <header>Marco Perez</header>
 
-            {{ page_user.user.first_name }}
-            {{ page_user.user.last_name }}
+    </section>
 
-        </h1>
+    <div class="line-break"></div>
 
-        <p class="bio">{{ page_user.bio }}</p>
+    <section class="section2">
 
-        <div class="social">
-            {% if page_user.website_url %}
-                <a href="{{ page_user.website_url }}"><i class="fa fa-dribbble"></i></a>
-            {% endif %}
+        <section class="first-section">
 
-            {% if page_user.twitter_url %}
-                <a href="{{ page_user.twitter_url }}"><i class="fa fa-twitter"></i></a>
-            {% endif %}
+            <h1>Software Engineer</h1>
 
-            {% if page_user.linkedin_url %}
-                <a href="{{ page_user.linkedin_url }}"><i class="fa fa-linkedin"></i></a>
-            {% endif %}
+            <div class="first-line-break2"></div>
 
-            {% if page_user.github_url %}
-                <a href="{{ page_user.github_url }}"><i class="fa fa-github"></i></a>
-            {% endif %}
+            <div class="icons">
+
+                <a href="{{ page_user.twitter_url }}"><i class="fab fa-twitter"></i></a>
+                <a href="{{ page_user.linkedin_url }}"><i class="fab fa-linkedin"></i></a>
+                <a href="{{ page_user.github_url }}"><i class="fab fa-github"></i></a>
+                <a href="{{ page_user.website_url }}"><i class="fas fa-laptop"></i></a>
+
+            </div>
+
+        </section>
+
+        <div class="line-break2"></div>
+
+        <p>
+            Hello! Welcome! As you may know by looking at the big, bold letters on top, my name is Marco. I am a self-taught software engineer who loves to make full-stack web apps in my free time. I'm not the most knowledgeable when it comes to coding, but I make up for it with the passion I have for it. Feel free to check out my stuff when you have time.
+        </p>
+
+    </section>
+
+    <div class="line-break"></div>
+
+    <section class="section3">
+
+        <h3>
+            Experience
+        </h3>
+
+        <div class="line-break2"></div>
+
+        <div class="entry">
+
+            <h4 class="Company">100Devs</h4>
+
+            <span class="Title">Software Engineer</span>
+
+            <p class="description"></p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    Collaborated with a team of developers to build modern and responsive web
+                    applications using best practices
+                </li>
+
+                <li>
+                    Built semantically structured full stack web applications
+                </li>
+
+                <li>
+                    Applied agile methodologies like SCRUM for project management
+                </li>
+
+            </ul>
 
         </div>
-    </div>
-    </div> 
 
+        <div class="entry">
+
+            <h4 class="Company">Veo-Ride</h4>
+
+            <span class="Title">Maintenance Mechanic - Oct, 2022</span>
+
+            <p class="description"></p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    I worked collaboratively with a team to repair and maintain a
+                    fleet of e-scooters and bikes.
+                </li>
+
+                <li>
+                    I conducted quality assessments before diagnosing issues,
+                    reducing diagnostic time by 50%
+                </li>
+
+                <li> 
+                    I also trained new mechanics, improving team
+                    productivity and the overall quality of our work.
+                    
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="entry">
+
+            <h4 class="Company">Lyft</h4>
+
+            <span class="Title">Maintenance Mechanic - march, 2022</span>
+
+            <p class="description"></p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    I inspected, troubleshooted, and repaired damaged e-scooters and
+                    e-bikes.
+                </li>
+
+                <li>
+                    I conducted quality inspections and managed electronic systems to ensure
+                    functionality, pushing out an average of 30% more vehicles every week with effective
+                    diagnosis.
+                </li>
+
+                <li> 
+                    I created training manuals on equipment operation and maintenance and
+                    prepared reports of tests to improve team performance.
+                    
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <div class="line-break"></div>
+
+    <section class="section4">
+
+        <h3>
+            Projects
+        </h3>
+
+        <div class="line-break2"></div>
+
+        <div class="entry">
+
+            <h4 class="Company">Personal Blog <a href="https://marco020.pythonanywhere.com/"><i class="fas fa-laptop-code"></i></a> </h4>
+
+            <span class="Title">Fullstack</span>
+
+            <p class="description">This website was made to document my thoughts on any subject that occupies my mind. Most of my blog posts consist of coding stuff. Check it out when you have time.</p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    The user interface was meticulously crafted using a blend of HTML, CSS, JavaScript, and
+                    Bootstrap.
+                </li>
+
+                <li>
+                    As for the backend, I leveraged the power of Python, Django, and PostgreSQL
+                    to develop a robust foundation.
+                </li>
+
+                <li> 
+                    The blog was successfully deployed on PythonAnywhere,
+                    bringing my vision to life.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="entry">
+
+            <h4 class="Company">Micro <a href="https://micro-mobile.netlify.app/"><i class="fas fa-laptop-code"></i></a> </h4>
+
+            <span class="Title">React Web App - Frontend</span>
+
+            <p class="description">I got inspired by my time fixing e-scooters and e-bikes at Lyft and Veo-Ride, and
+                I wanted to make a website that's super eye-catching and matches the startup aesthetic.</p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    This web app was made using Html, Css, Javascript and React.
+                </li>
+
+                <li>
+                    Yarn was used as the package manager.
+                </li>
+
+                <li>
+                    This web app was deployed using Netlify.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="entry">
+
+            <h4 class="Company">Simple Social</h4>
+
+            <span class="Title">Fullstack</span>
+
+            <p class="description">This website was the first fullstack project I made.</p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    The Frontend was made using Html, Css, Javascript.
+                </li>
+
+                <li>
+                    The backend was made using Python and Django.
+                </li>
+
+                <li>
+                    The database is Sqlite.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <div class="line-break"></div>
+
+    <section class="section4">
+
+        <h3>
+            Freelance Work
+        </h3>
+
+        <div class="line-break2"></div>
+
+        <div class="entry">
+
+            <h4 class="Company">Daniela's acrylics <a href="https://www.danielasacrylic.com/"><i class="fas fa-laptop-code"></i></a> </h4>
+
+            <span class="Title">Website</span>
+
+            <p class="description"> I developed this website on behalf of a client, aiming
+                to promote their thriving nail service business. Throughout the project, my focus
+                was on effectively incorporating all the ideas they envisioned within the confines
+                of their budget.</p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    It was made using HTML, CSS, and JavaScript.
+                </li>
+
+                <li>
+                    I focused on making the user experience seamless. At the suggestion of my client, I added a FAQ section for her clients.
+                </li>
+
+                <li> 
+                    The website wassuccessfully deployed using Netlify.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <div class="line-break"></div>
+
+    <section class="section5">
+
+        <h3>
+            Skills
+        </h3>
+
+        <div class="line-break2"></div>
+
+        <div class="entry">
+
+            <h4 class="Company"></h4>
+
+            <span class="Title"></span>
+
+            <ul class="bullet-points">
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Django</li>
+                <li>React</li>
+                <li>PostgreSQL</li>
+                <li>Sqlite</li>
+                <li>Git</li>
+                <li>Sass</li>
+                <li>Bootstrap</li>
+                <li>Typescript</li>
+                <li>Node.js</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <div class="line-break"></div>
+
+    <section class="section6">
+
+        <h3>
+            Hobbies and Stuff That I Like 
+        </h3>
+
+        <div class="line-break2"></div>
+
+        <div class="entry">
+
+            <h4 class="Company">Repairing/Fixing</h4>
+
+            <span class="Title">Old school video games</span>
+
+            <p class="description">Besides coding, I have a few hobbies that I enjoy. Repairing old-school video games is one of them. In particular, I like repairing N64 games. I also like to resurface PS2 games and fix Nintendo stuff. </p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    I have repaired quite a few Nintendo consoles and Gameboys. At the moment, I have three Gameboys, three Gamecubes, and three N64 consoles that I repaired and kept. I also modded one of my GameCubes. (I'm not willing to sell them, so don't ask.)
+                </li>
+                <li>
+                    Sometimes all it takes to fix a Game Boy is a cotton swab and some isopropyl alcohol. It's true; I fixed some by just rubbing the cotton swab on the power switch.
+                </li>
+
+                <li>
+                    I have had some failures and things I just can't do right now. But I'm not in a hurry to repair them. For example, I bought a Game Boy Micro from a guy for $5. It doesn't turn on. So I need to diagnose it eventually and potentially buy the parts I need. I just don't have the money for it right now.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="entry">
+
+            <h4 class="Company">Collecting</h4>
+
+            <span class="Title">Vintage stuff, ex: video games, CRT TVs, etc.</span>
+
+            <p class="description">So apart from fixing and repairing games and consoles, I like to collect as well.</p>
+
+            <ul class="bullet-points">
+
+                <li>
+                    I still own my original N64, PS2 Slim, Wii, and Xbox 360 from when I was still a kid.
+                </li>
+
+                <li>
+                    I own two CRT TVs. I bought the first one for $50 and the other for $10. FYI, the $10 one came with its original remote. The remote didn't work at first, but I fixed that with, you guessed it, a cotton swab and isopropyl alcohol.
+                </li>
+
+                <li>
+                    My most recent console purchase was an original Xbox. It came with a bunch of games, controllers, and a remote. It was $35.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <div class="line-break"></div>
+
+    <footer class="credit">
+
+        <h6>Designed By: <a href="https://github.com/jglovier/resume-template">John Glovier</a></h6>
+
+    <h6>Made by: <a href="https://github.com/Marco0201/Resume-Template">Marco</a></h6>
+
+    </footer>
+
+
+</div>
+
+    
+    
 </body>
 </html>
 
