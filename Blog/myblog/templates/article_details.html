@@ -22,7 +22,7 @@
     <h5> By:  {{ post.author.first_name }}
         {{ post.author.last_name }} - {{ post.post_date }}  
         
-     <!-- this if statement asks if the user is authenticated, and if they are then it will display the (Edit) and (Delete) links; if they aren't then the links won't appear. The <br> is added to the else statement for styling purposes only. -->
+    
     {% if user.is_authenticated %}
         {% if user.id == post.author.id%}
          - <a href="{% url 'update_post' post.pk %}">(Edit)</a>
@@ -35,11 +35,7 @@
 
 </h5>
 <br>
-<!-- by default django does not let you put html markup in the forms because people can inject malicious code using html. Since django is a backend and it uses a database this becames a dangerous combination. the ( |safe) allows you to use html markup on the body form. -->
-<!-- {% if post.header_image %} -->
-    <!-- <img src="{{ post.header_image.url }}" alt=""> -->
-<!-- {% else %} -->
-<!-- {% endif %} -->
+
 {{ post.body|safe }}
 
 <br>

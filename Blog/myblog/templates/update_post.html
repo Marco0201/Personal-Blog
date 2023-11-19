@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<!-- this if else statement makes sure a non-user cannot access the edit page from a post without authenticating (logging in) -->
+
 {% if user.is_authenticated %}
-<!-- the if statement below checks if the authenticated user is the same user that made the post originally. If it is, the user will be allowed to make changes to the blog post. This uses the author model in the Post class. you can find it in the models.py file -->
+
     {% if user.id == post.author.id%} 
         <h1>Update Post....</h1>
         <br>

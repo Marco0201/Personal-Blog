@@ -16,32 +16,6 @@
 
     <h1>Post</h1>
 
-<!-- <ul>
-    {% for post in object_list %}
-        <li>
-           <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a>
-           I slugified the url for categories. For information on it go to this url: https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#slugify
-            -<a href="{% url 'category' post.category|slugify %} ">{{post.category}}</a>
-            -
-            {{ post.author.first_name }}
-            {{ post.author.last_name }} - {{ post.post_date }}
-            this if statement asks if the user is authenticated, and if they are then it will display the (Edit) and (Delete) links; if they aren't then the links won't appear. The <br> is added to the else statement for styling purposes only.
-            {% if user.is_authenticated %}
-                {% if user.id == post.author.id%}
-                    - <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-                    <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-                    <br>
-                {% endif %}
-            {% else %}
-            <br>
-            {% endif %}
-            the |slice:":(integer)" is used to reduce the number of characters that show up in each of the body description on the home page, specifically only 200 characters are allowed to show up. Additonally the (|safe) makes use of the html markup from the article_details.html file; basically it makes sure the markup doesn't get included in the body description
-            {{ post.snippet }}
-        </li>
-    {% endfor %}
-</ul> -->
-
-
 
 <ul class="home_detail">
     {% for post in object_list %}
@@ -68,17 +42,7 @@
             <br>
             {% endif %}
         </div>
-        <!-- <li> -->
-           <!-- <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> -->
-           <!-- I slugified the url for categories. For information on it go to this url: https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#slugify -->
-            <!-- -<a href="{% url 'category' post.category|slugify %} ">{{post.category}}</a> -->
-            <!-- -
-            {{ post.author.first_name }}
-            {{ post.author.last_name }} - {{ post.post_date }} -->
-            <!-- this if statement asks if the user is authenticated, and if they are then it will display the (Edit) and (Delete) links; if they aren't then the links won't appear. The <br> is added to the else statement for styling purposes only. -->
-            <!-- the |slice:":(integer)" is used to reduce the number of characters that show up in each of the body description on the home page, specifically only 200 characters are allowed to show up. Additonally the (|safe) makes use of the html markup from the article_details.html file; basically it makes sure the markup doesn't get included in the body description -->
-            <!-- {{ post.snippet }} -->
-        <!-- </li> -->
+        
     {% endfor %}
 </ul>
 

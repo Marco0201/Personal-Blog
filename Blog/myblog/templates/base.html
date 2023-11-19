@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               
-              <!-- if the user is authenticated I want them to be able to add a post and logout; if they aren't authenticated then I want them to have the option of registering and to login, thats what this if else statement does -->
+              
               {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
@@ -30,33 +30,8 @@
                   <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
                 </li>
 
-
-                <!-- category menu code -->
-                <!-- {% if cat_menu %}
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categories
-                  </a>
-                  <ul class="dropdown-menu">
-                    {% for item in cat_menu %}
-                    <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </li>
-
-                {% else %}
-
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'category_list' %}">Categories</a>
-                </li>
-
-                {% endif %} -->
-                <!-- end of category menu code -->
               {% else %}
 
-
-              <!-- there is no need to make a urls path for this login page, the path('members/', include('django.contrib.auth.urls')) from the blog urls.py file takes care of it for you -->
               <li class="nav-item"> 
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
               </li>
@@ -88,10 +63,6 @@
                 {% endif %}
 
             </ul>
-            <!-- <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
             {% if user.is_authenticated %}
                 <ul class="navbar-nav ml-auto">
 
@@ -126,7 +97,7 @@
                       
                     </ul>
 
-                    <!-- there is no need to make a urls path for this logout page, the path('members/', include('django.contrib.auth.urls')) from the blog urls.py file takes care of it for you -->
+                    
                     <li class="nav-item"> 
                       <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     </li>
