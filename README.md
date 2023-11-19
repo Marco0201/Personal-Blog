@@ -1,12 +1,67 @@
 # Personal-Blog
-![blog-pic](https://github.com/Marco0201/Personal-Blog/assets/94779649/da958397-7c8e-4df1-87c8-86c58c24a4d2)
-# About
-A repository that hosts my personal blog.
-# Techs used
-Html, CSS, Bootstrap, Javascript, Python, Django, Postgresql
-# Optimizations
-I consistently refactor and optimize my code, sometimes for efficiency, sometimes for readability, but almost always for design purposes.
-# Lessons Learned
-While working on this blog project, I picked up some really valuable lessons. One of the coolest things I learned was how important it is to understand Django's view-based templates. I got the hang of creating a login and logout system, and I even figured out how to handle static files like images, HTML, and CSS. Another awesome thing I learned was how to connect Postgres to Django and deploy it on PythonAnywhere. It was such a great learning experience!
+A repository that hosts my full-stack personal blog.
 
-[demo](https://marco020.pythonanywhere.com/)
+## Techs used
+
+HTML, CSS, Bootstrap, Javascript, Python, Django, PostgreSQL.
+
+## Installation
+
+``Keep in mind the examples below are Window's commands. Mac and Linux have different commands when doing the installation.``
+
+Create a virtual environment using [python](https://www.python.org/):
+
+```bash
+python -m venv blog
+```
+
+Now activate the virtual environment.
+
+```bash
+blog/Scripts/activate
+```
+
+Now use the package manager [pip](https://pip.pypa.io/en/stable/) to install the requirements.txt file. While the virtual environment is activated.
+
+```bash
+pip install -r requirements.txt
+```
+
+## Login and Registration authentication
+
+If you installed all the packages from the requirements.txt correctly then you should be able to use login and registration right away.
+
+
+## Running the Project
+
+To run the project make sure to be in the right directory. You should be in the following directory: ``Personal-Blog\Blog\``
+
+Now you should makemigrations and then migrate.
+
+```python
+python manage.py makemigrations
+
+python manage.py migrate
+```
+
+Then finally, you can run the server.
+
+```python
+python manage.py runserver
+```
+
+Additionally you can also create a superuser.
+
+```python
+#optional
+python manage.py createsuperuser
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
