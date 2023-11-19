@@ -55,9 +55,6 @@
                 <!-- end of category menu code -->
               {% else %}
 
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Register New User</a>
-              </li>
 
               <!-- there is no need to make a urls path for this login page, the path('members/', include('django.contrib.auth.urls')) from the blog urls.py file takes care of it for you -->
               <li class="nav-item"> 
@@ -65,6 +62,9 @@
               </li>
 
               {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register New User</a>
+              </li>
 
               {% if cat_menu %}
 
