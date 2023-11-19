@@ -3,7 +3,7 @@ A repository that hosts my full-stack personal blog.
 
 ## Techs used
 
-HTML, CSS, Bootstrap, Javascript, Python, Django, PostgreSQL.
+HTML, CSS, Bootstrap, Javascript, Python, Django, SQLite, PostgreSQL.
 
 ## Installation
 
