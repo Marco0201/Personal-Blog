@@ -17,7 +17,7 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     ordering = ['-post_date']
-    paginate_by = 8
+    paginate_by = 6
     # ordering = ['-id']
 
     # for more information go to https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-single-object/#django.views.generic.detail.SingleObjectMixin.get_context_data
@@ -35,7 +35,7 @@ def CategoryListView(request):
 
 def CategoryView(request, cat):
     category_posts = Post.objects.filter(category=cat.replace('-', ' '))
-    paginator = Paginator(category_posts.order_by('-post_date'), 4)
+    paginator = Paginator(category_posts.order_by('-post_date'), 6)
 
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)

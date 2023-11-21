@@ -1,96 +1,127 @@
 {% extends 'base.html' %}
-{% block title %} {{ post.title_tag }} {% endblock %}
 
 {% block content %}
+{% load static %}
+<!--Main Navigation-->
+<header>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+      <h1 class="mb-0 h4">{{ post.title }}</h1>
+    </div>
+    <!-- Jumbotron -->
+  </header>
+  <!--Main Navigation-->
 
-    {% load static %}
+  <!--Main layout-->
+  <main class="mt-4 mb-5">
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md mb-4">
+          <!--Section: Post data-mdb-->
+          <section class="border-bottom mb-4">
+            <img src="{{ post.header_image.url }}"
+              class="img-fluid shadow-2-strong rounded-5 mb-4" alt="" />
 
-    <link rel="stylesheet" href="{% static 'Blog/css/main.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <h1>{{ post.title }}</h1>
-    <h5> By:  {{ post.author.first_name }}
-        {{ post.author.last_name }} - {{ post.post_date }}  
+            <div class="row align-items-center mb-4">
+              <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
+                <!-- <img src="{% static 'Blog\images\me.jpg' %}" class="rounded-5 shadow-1-strong me-2"
+                  height="35" alt="" loading="lazy" /> -->
+                <span> Published <u>{{ post.post_date }}</u> by</span>
+                <a href="" class="text-dark">{{ post.author.first_name }}
+                    {{ post.author.last_name }}</a>
+              </div>
+
+              <div class="col-lg-6 text-center text-lg-end">
+                <!-- <button type="button" class="btn btn-primary px-3 me-1" style="background-color: #3b5998;">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+                <button type="button" class="btn btn-primary px-3 me-1" style="background-color: #55acee;">
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button type="button" class="btn btn-primary px-3 me-1" style="background-color: #0082ca;">
+                  <i class="fab fa-linkedin"></i>
+                </button>
+                <button type="button" class="btn btn-primary px-3 me-1">
+                  <i class="fas fa-comments"></i>
+                </button> -->
+
+                {% if user.is_authenticated %}
+                    {% if user.id == post.author.id%}
+                     <a class="btn btn-primary px-3 me-1" style="background-color: #3b5998;" href="{% url 'update_post' post.pk %}">Edit</a>
+                    <a class="btn btn-danger px-3 me-1" href="{% url 'delete_post' post.pk %}">Delete</a>
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </section>
+          <!--Section: Post data-mdb-->
+
+          <!--Section: Text-->
+          <section>
+            {{ post.body|safe }}
+          </section>
+          <!--Section: Text-->
+          <hr class="m-0" />
+          <br>
+          <!--Section: Author-->
+          <section class="border-bottom mb-4 pb-4">
+            <div class="row">
+              <div class="col-3">
+                <img src="{% static 'Blog\images\me.jpg' %}"
+                  class="img-fluid shadow-1-strong rounded-5" alt="" />
+              </div>
+
+              <div class="col-9">
+                <p class="mb-2"><strong>{{ post.author.first_name }}
+                    {{ post.author.last_name }}</strong></p>
+                <p>
+                    {{ post.author.profile.bio }}
+                </p>
+              </div>
+            </div>
+          </section>
+          <!--Section: Author-->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
         
-    
-    {% if user.is_authenticated %}
-        {% if user.id == post.author.id%}
-         - <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-            <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-            <br>
-        {% endif %}
-    {% else %}
-        <br>
-    {% endif %}
-
-</h5>
-<br>
-
-{{ post.body|safe }}
-
-<br>
-<br>
-
-
-   <!-- Add icon library -->
-   
-<div class="card">
-{% if post.author.profile.profile_pic %}
-    <img src="{{ post.author.profile.profile_pic.url }}" alt="Marco">
-
-{% else %}
-    <img src="{% static 'Blog\images\user.png' %}" alt="User">
-{% endif %}
-  <div class="information">
-
-    <h1 class="name">
-
-        {{ post.author.first_name }}
-        {{ post.author.last_name }}
-
-      </h1>
-
-      <p class="bio">{{ post.author.profile.bio }}</p>
-
-      <div class="social">
-        {% if post.author.profile.website_url %}
-            <a href="{{ post.author.profile.website_url }}"><i class="fa fa-laptop"></i></a>
-        {% endif %}
-
-        {% if post.author.profile.twitter_url %}
-            <a href="{{ post.author.profile.twitter_url }}"><i class="fa fa-twitter"></i></a>
-        {% endif %}
-
-        {% if post.author.profile.linkedin_url %}
-            <a href="{{ post.author.profile.linkedin_url }}"><i class="fa fa-linkedin"></i></a>
-        {% endif %}
-
-        {% if post.author.profile.github_url %}
-            <a href="{{ post.author.profile.github_url }}"><i class="fa fa-github"></i></a>
-        {% endif %}
-
-        <a href="{% url 'show_profile_page' post.author.profile.id %}"><i class="fa fa-user"></i></a>
+        <!--Grid column-->
       </div>
-  </div>
-</div> 
+      <!--Grid row-->
+    </div>
+  </main>
+  <!--Main layout-->
 
-<br>
-<br>
-<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
 
+    <hr class="m-0" />
 
-</body>
-</html>
-
-
+    <div class="text-center py-4 align-items-center">
+      <p>Check out my social media's</p>
+      <a href="https://marco-webportfolio.netlify.app/" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fas fa-laptop"></i>
+      </a>
+      <a href="https://github.com/Marco0201" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/software_marco" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/marco-perez02/" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </footer>
+  <!--Footer-->
 {% endblock %}

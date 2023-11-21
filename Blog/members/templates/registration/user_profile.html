@@ -16,16 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-
+ 
 <div class="everything">
 
     <section class="section1">
 
-        {% if page_user.profile_pic %}
-        <img src="{{ page_user.profile_pic.url }}" alt="me">
-        {% else %}
-        <img src="{% static 'Blog\images\user.png' %}" alt="User">
-        {% endif %}
+        
+        <img src="{% static 'Blog\images\me.jpg' %}" alt="Marco">
+        
 
         <header>Marco Perez</header>
 
@@ -43,10 +41,10 @@
 
             <div class="icons">
 
-                <a href="{{ page_user.twitter_url }}"><i class="fab fa-twitter"></i></a>
-                <a href="{{ page_user.linkedin_url }}"><i class="fab fa-linkedin"></i></a>
-                <a href="{{ page_user.github_url }}"><i class="fab fa-github"></i></a>
-                <a href="{{ page_user.website_url }}"><i class="fas fa-laptop"></i></a>
+                <a href="https://twitter.com/software_marco"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/marco-perez02/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Marco0201"><i class="fab fa-github"></i></a>
+                <a href="https://marco-webportfolio.netlify.app/"><i class="fas fa-laptop"></i></a>
 
             </div>
 

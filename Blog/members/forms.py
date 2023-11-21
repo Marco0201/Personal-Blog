@@ -8,8 +8,9 @@ from myblog.models import Profile
 class ProfilePageForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('bio', 'linkedin_url',
-                  'twitter_url', 'github_url', 'website_url', 'profile_pic')
+        fields = ('bio', 'profile_pic')
+        # fields = ('bio', 'linkedin_url',
+        #           'twitter_url', 'github_url', 'website_url', 'profile_pic')
 
     # widgets = {
     #     'bio': forms.Textarea(attrs={'class': 'form-control'}),
@@ -20,14 +21,14 @@ class ProfilePageForm(forms.ModelForm):
     # }
     bio = forms.CharField(max_length=200, widget=forms.Textarea(
         attrs={'class': 'form-control'}))
-    linkedin_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    twitter_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    github_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    website_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # linkedin_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # twitter_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # github_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # website_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     profile_pic = forms.FileField(
         widget=forms.FileInput(attrs={'class': 'form-control'}))
 
@@ -35,19 +36,20 @@ class ProfilePageForm(forms.ModelForm):
 class EditProfilePageForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('bio', 'linkedin_url',
-                  'twitter_url', 'github_url', 'website_url', 'profile_pic')
+        fields = ('bio', 'profile_pic')
+        # fields = ('bio', 'linkedin_url',
+        #           'twitter_url', 'github_url', 'website_url', 'profile_pic')
 
     bio = forms.CharField(max_length=200, widget=forms.Textarea(
         attrs={'class': 'form-control'}))
-    linkedin_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    twitter_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    github_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    website_url = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # linkedin_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # twitter_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # github_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # website_url = forms.CharField(
+    #     max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     profile_pic = forms.FileField(
         widget=forms.FileInput(attrs={'class': 'form-control'}))
 
