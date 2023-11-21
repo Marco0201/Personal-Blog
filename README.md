@@ -33,6 +33,7 @@ If you installed all the packages from the requirements.txt correctly then you s
 
 
 ## Running the Project
+``It is important to follow all the steps for running this project. Do not miss a single step!``
 
 To run the project make sure to be in the right directory. You should be in the following directory: ``Personal-Blog\Blog\``
 
@@ -43,8 +44,10 @@ python manage.py makemigrations
 
 python manage.py migrate
 ```
+Once you migrate you will need to un-comment all the code that was commented out in the forms.py file, inside the myblog folder. You should be in the following directory:
+``Personal-Blog\Blog\myblog\forms.py``
 
-Then finally, you can run the server.
+Once you finish un-commenting out the code in the forms.py file , Then finally, you can run the server. Make sure you are back to the following directory: ``Personal-Blog\Blog\``
 
 ```python
 python manage.py runserver
@@ -56,6 +59,7 @@ Additionally you can also create a superuser.
 #optional
 python manage.py createsuperuser
 ```
+
 
 ## Contributing
 
