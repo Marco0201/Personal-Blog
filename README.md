@@ -8,6 +8,7 @@ HTML, CSS, Bootstrap, Javascript, Python, Django, SQLite, PostgreSQL.
 ## Installation
 
 ``Keep in mind the examples below are Window's commands. Mac and Linux have different commands when doing the installation.``
+``This project uses Python 3.8.16 and Django 4.2.1``
 
 Create a virtual environment using [python](https://www.python.org/):
 
