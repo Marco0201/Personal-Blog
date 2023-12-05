@@ -34,7 +34,7 @@ If you installed all the packages from the requirements.txt correctly then you s
 
 ## Running the Project
 
-To run the project make sure to be in the right directory. You should be in the following directory: ``Personal-Blog\Blog\``
+To run the project make sure to be in the right directory.
 
 Now you should makemigrations and then migrate.
 
