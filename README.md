@@ -44,10 +44,7 @@ python manage.py makemigrations
 
 python manage.py migrate
 ```
-Once you migrate you will need to un-comment all the code that was commented out in the forms.py file, inside the myblog folder. You should be in the following directory:
-``Personal-Blog\Blog\myblog\forms.py``
-
-Once you finish un-commenting out the code in the forms.py file , Then finally, you can run the server. Make sure you are back to the following directory: ``Personal-Blog\Blog\``
+Then finally, you can run the server. Make sure you are back to the following directory: ``Personal-Blog\Blog\``
 
 ```python
 python manage.py runserver
