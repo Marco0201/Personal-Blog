@@ -33,7 +33,6 @@ If you installed all the packages from the requirements.txt correctly then you s
 
 
 ## Running the Project
-``It is important to follow all the steps for running this project. Do not miss a single step!``
 
 To run the project make sure to be in the right directory. You should be in the following directory: ``Personal-Blog\Blog\``
 
